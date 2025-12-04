@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudheer Konduboina | GCP, DevOps & AI/ML Enthusiast</title>
+    <meta name="description" content="Sudheer Konduboina's modern portfolio with a luxury, light color theme, specializing in GCP, Kubernetes, Docker, DevOps, and AI/ML.">
+    <!-- Load Poppins and Inter Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom Color Variables based on user request */
+        :root {
+            --deep-purple: #5e35b1;
+            --lavender-main: #b39ddb;
+            --lavender-light: #d1c4e9;
+            --dark-text: #333;
+            --light-bg: #f9f9f9;
+            --card-bg: #ffffff;
+            --light-footer: #eee;
+        }
+
+        /* Base Styles and Colors */
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            min-height: 100vh;
+        }
+
+        /* Card Style: White with elegant shadow */
+        .luxury-card {
+            background-color: var(--card-bg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, deep shadow */
+            transition: all 0.4s ease;
+            border: 1px solid var(--lavender-light);
+        }
+
+        .luxury-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Primary text colors */
+        .text-primary-deep { color: var(--deep-purple); }
+        .text-primary-lavender { color: var(--lavender-main); }
+        .border-primary-lavender { border-color: var(--lavender-main); }
+
+        /* Elegant Button Style */
+        .luxury-btn {
+            background: linear-gradient(90deg, var(--deep-purple) 0%, var(--lavender-main) 100%);
+            color: white;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(94, 53, 177, 0.4);
+        }
+        .luxury-btn:hover {
+            box-shadow: 0 8px 20px rgba(94, 53, 177, 0.6);
+            transform: translateY(-1px);
+        }
+
+        /* Navbar link underglow */
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--deep-purple);
+            transition: width 0.3s ease;
+            margin-top: 2px;
+        }
+
+        /* Timeline Connector Style */
+        .timeline-connector {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--lavender-main), var(--deep-purple));
+            transform: translateX(-50%);
+        }
+        
+        /* TIMELINE DOT STYLES (Kept for visual flair, but removed the white border/background to remove the 'dot' look) */
+        .timeline-pin {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 10;
+            box-shadow: 0 0 0 4px var(--light-bg); /* Add background color ring to cover the line */
+        }
+        
+        /* Mobile responsive adjustments for timeline */
+        @media (max-width: 768px) {
+            /* Fix connector line position for mobile (left side) */
+            .timeline-connector {
+                left: 12px;
+                transform: translateX(0);
+            }
+            /* Align all mobile timeline content to the right of the line */
+            .md\:contents .md\:w-1\/2 {
+                width: 100%;
+            }
+            .md\:contents .md\:ml-0 {
+                margin-left: 30px; /* Offset to the right of the line */
+                padding-left: 0;
+            }
+            .md\:contents .md\:pr-12 {
+                padding-right: 0;
+            }
+            /* Adjust pin positions for mobile */
+            .md\:contents .md\:right-\[-8px\] {
+                right: auto;
+                left: 8px;
+            }
+            .md\:contents .md\:left-\[-8px\] {
+                left: 8px;
+            }
+        }
+        
+        /* Certification grid item style */
+        .cert-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 12px;
+            background-color: var(--light-bg);
+            border: 1px solid var(--lavender-light);
+            transition: all 0.3s ease;
+        }
+        .cert-item:hover {
+            box-shadow: 0 5px 15px rgba(94, 53, 177, 0.1);
+            transform: translateY(-1px);
+        }
+    </style>
+</head> </br> </br> </br> 
+<body class="antialiased min-h-screen">
+
+    <!-- 1. NAVBAR (Integrated Responsive Header) -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white/95 shadow-lg border-b border-lavender-light backdrop-blur-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Primary Links Container -->
+                <div class="flex items-center">
+                    <!-- Brand/Logo (SK) -->
+                    <a href="#home" class="flex-shrink-0 text-2xl font-extrabold text-primary-deep tracking-widest relative p-1 transition duration-150 hover:bg-primary-lavender/10 rounded-lg">
+                        <span class="text-primary-lavender">S</span>K
+                    </a>
+
+                    <!-- Navigation Links (Hidden on mobile, visible on desktop) -->
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-4 md:space-x-8 items-center">
+                        <a href="#home" class="nav-link text-dark-text px-3 py-2 text-sm font-medium rounded-lg hover:bg-primary-lavender/10 hover:text-primary-deep transition duration-150">Home</a>
+                        <a href="#about" class="nav-link text-dark-text/70 hover:bg-primary-lavender/10 hover:text-primary-deep px-3 py-2 text-sm font-medium rounded-lg transition duration-150">About</a>
+                        <a href="#skills" class="nav-link text-dark-text/70 hover:bg-primary-lavender/10 hover:text-primary-deep px-3 py-2 text-sm font-medium rounded-lg transition duration-150">Skills</a>
+                        <a href="#projects" class="nav-link text-dark-text/70 hover:bg-primary-lavender/10 hover:text-primary-deep px-3 py-2 text-sm font-medium rounded-lg transition duration-150">Projects</a>
+                        <a href="#certs" class="nav-link text-dark-text/70 hover:bg-primary-lavender/10 hover:text-primary-deep px-3 py-2 text-sm font-medium rounded-lg transition duration-150">Certs</a>
+                        <a href="#experience" class="nav-link text-dark-text/70 hover:bg-primary-lavender/10 hover:text-primary-deep px-3 py-2 text-sm font-medium rounded-lg transition duration-150">Experience</a>
+                    </div>
+                </div>
+
+                <!-- Action Button / Contact Link (Visible on desktop) -->
+                <div class="hidden sm:block">
+                    <a href="#contact" class="luxury-btn text-white px-4 py-2 text-sm font-semibold rounded-full shadow-md transition duration-150">
+                        Contact Me
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button (Hamburger/X) -->
+                <div class="-mr-2 flex sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-lg text-primary-deep hover:bg-primary-lavender/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-deep" aria-controls="mobile-menu" aria-expanded="false">
+                        <!-- Icon when menu is closed (Hamburger) -->
+                        <i data-lucide="menu" class="block h-6 w-6"></i>
+                        <!-- Icon when menu is open (X) -->
+                        <i data-lucide="x" class="hidden h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 border-t border-lavender-light">
+                <a href="#home" class="text-primary-deep hover:bg-primary-lavender/10 block px-3 py-2 rounded-md text-base font-medium transition duration-150">Home</a>
+                <a href="#about" class="text-dark-text/80 hover:bg-primary-lavender/10 hover:text-primary-deep block px-3 py-2 rounded-md text-base font-medium transition duration-150">About</a>
+                <a href="#skills" class="text-dark-text/80 hover:bg-primary-lavender/10 hover:text-primary-deep block px-3 py-2 rounded-md text-base font-medium transition duration-150">Skills</a>
+                <a href="#projects" class="text-dark-text/80 hover:bg-primary-lavender/10 hover:text-primary-deep block px-3 py-2 rounded-md text-base font-medium transition duration-150">Projects</a>
+                <a href="#certs" class="text-dark-text/80 hover:bg-primary-lavender/10 hover:text-primary-deep block px-3 py-2 rounded-md text-base font-medium transition duration-150">Certs</a>
+                <a href="#experience" class="text-dark-text/80 hover:bg-primary-lavender/10 hover:text-primary-deep block px-3 py-2 rounded-md text-base font-medium transition duration-150">Experience</a>
+                <a href="#contact" class="block w-full text-center luxury-btn mt-4 px-3 py-2 rounded-xl text-base font-medium transition duration-150">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area with top padding to clear the fixed navbar -->
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-16 lg:space-y-24 pt-20">
+        <!-- 2. HERO SECTION (BIG LUXURY CARD) -->
+        <section id="home" class="luxury-card p-8 lg:p-16 rounded-3xl min-h-[70vh] flex items-center relative overflow-hidden">
+            <div class="grid lg:grid-cols-2 gap-10 items-center w-full relative z-10">
+                <!-- Text Content -->
+                <div class="flex flex-col space-y-6 order-2 lg:order-1 text-center lg:text-left">
+                    <p class="text-xl font-medium text-primary-lavender uppercase tracking-widest">Hello, I'm</p>
+                    <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-none text-primary-deep">
+                        Sudheer <span class="text-primary-lavender">Konduboina</span>
+                    </h1>
+                    <!-- UPDATED ROLE/TITLE -->
+                    <p class="text-2xl sm:text-3xl text-dark-text font-light">
+                        <span class="text-primary-deep font-semibold">GCP, DevOps</span> and AI/ML Enthusiast
+                    </p>
+                    <p class="text-md max-w-lg mx-auto lg:mx-0 text-dark-text/70 pt-2">
+                        Motivated Integrated MCA student aspiring to build a career in DevOps, Cloud Engineering, and Machine Learning. Skilled in GCP, AWS, CI/CD, Kubernetes, Docker, and AI/ML frameworks.
+                    </p>
+                    <!-- Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start">
+                        <a href="#contact" class="px-8 py-3 text-lg font-semibold rounded-full luxury-btn">
+                            Hire Me
+                        </a>
+                        <!-- CV DOWNLOAD LINK -->
+                        <a href="SUDHEER KONDUBOINARESUMEAI.pdf" target="_blank" class="px-8 py-3 text-lg font-semibold text-primary-deep border border-primary-deep/50 rounded-full transition duration-300 hover:bg-primary-deep/10 hover:shadow-lg">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Photo (Elegant Frame) -->
+                <div class="flex justify-center items-center order-1 lg:order-2">
+                    <div class="luxury-card p-3 rounded-full w-64 h-64 sm:w-80 sm:h-80 flex justify-center items-center shadow-lg border-primary-lavender">
+                        <!-- Placeholder Profile Image -->
+                        <div class="rounded-full w-full h-full bg-cover bg-center" style="background-image: url('https://placehold.co/500x500/d1c4e9/5e35b1?text=SK');">
+                            <!-- In a real deployment, replace the URL with the actual image path -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ABOUT ME (Luxury Card) -->
+        <section id="about" class="luxury-card p-8 lg:p-12 rounded-3xl">
+            <h2 class="text-4xl font-bold mb-10 text-center text-primary-deep relative">
+                About <span class="text-primary-lavender">Me</span>
+                <span class="block w-20 h-1 mx-auto mt-2 bg-primary-lavender rounded-full"></span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- Image Placeholder -->
+                <div class="md:col-span-1 flex justify-center">
+                    <div class="w-48 h-48 bg-primary-lavender/10 rounded-xl overflow-hidden shadow-lg border border-primary-lavender flex items-center justify-center">
+                         <i data-lucide="cloud-cog" class="w-24 h-24 text-primary-deep"></i>
+                    </div>
+                </div>
+                <!-- Text Content & Tags -->
+                <div class="md:col-span-2 space-y-6">
+                    <p class="text-lg text-dark-text leading-relaxed">
+                        I am an Integrated MCA student at Parul University, specializing in Cloud Engineering, DevOps, and Artificial Intelligence/Machine Learning. I possess practical skills in **GCP** (GKE, Cloud Build, VPC), foundational knowledge in **AWS** (EC2, S3), strong command over CI/CD pipelines, **Kubernetes**, **Docker**, and **Terraform**. I am also proficient in **Python** with frameworks like **TensorFlow** and **LangChain** for building intelligent applications. My objective is to contribute to scalable deployments and innovative data-driven solutions.
+                    </p>
+
+                    <!-- Strength Tags (chips) -->
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <span class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary-deep/10 text-primary-deep border border-primary-deep/30 transition hover:bg-primary-deep/20 hover:scale-[1.02]">GCP Cloud</span>
+                        <span class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary-lavender/20 text-dark-text border border-primary-lavender transition hover:bg-primary-lavender/30 hover:scale-[1.02]">AI/ML</span>
+                        <span class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary-deep/10 text-primary-deep border border-primary-deep/30 transition hover:bg-primary-deep/20 hover:scale-[1.02]">Kubernetes (GKE)</span>
+                        <span class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary-lavender/20 text-dark-text border border-primary-lavender transition hover:bg-primary-lavender/30 hover:scale-[1.02]">Terraform (IaC)</span>
+                        <span class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary-deep/10 text-primary-deep border border-primary-deep/30 transition hover:bg-primary-deep/20 hover:scale-[1.02]">CI/CD Pipelines</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SKILLS GRID (Categorized Luxury Pills) -->
+        <section id="skills" class="luxury-card p-8 lg:p-12 rounded-3xl">
+            <h2 class="text-4xl font-bold mb-10 text-center text-primary-deep relative">
+                Technical <span class="text-primary-lavender">Skills</span>
+                <span class="block w-20 h-1 mx-auto mt-2 bg-primary-lavender rounded-full"></span>
+            </h2>
+
+            <script>
+                const categorizedSkills = [
+                    {
+                        category: "Cloud Platforms",
+                        icon: "cloud",
+                        skills: [
+                            "Google Cloud Platform (GCP)", "Compute Engine", "Cloud Storage", "IAM", "VPC", "GKE (Kubernetes Engine)",
+                            "Cloud Build", "Cloud SQL", "Artifact Registry", "AWS", "EC2", "S3"
+                        ]
+                    },
+                    {
+                        category: "DevOps Tools & Technologies",
+                        icon: "wrench",
+                        skills: [
+                            "Git", "GitHub", "GitHub Actions", "Jenkins", "Docker", "Kubernetes (GKE)", "Dockerfile", "YAML",
+                            "CI/CD Pipelines", "Terraform", "Render (Deployment)", "gcloud CLI", "Infrastructure as Code (IaC)"
+                        ]
+                    },
+                    {
+                        category: "AI / Machine Learning Skills",
+                        icon: "brain",
+                        skills: [
+                            "TensorFlow", "Keras", "Scikit-learn", "Hugging Face Transformers", "LangChain", "FAISS",
+                            "NLP (Natural Language Processing)", "Sentiment Analysis", "Speech Emotion Recognition",
+                            "Feature Engineering", "Model Training & Evaluation", "Deep Learning", "Streamlit (AI web apps)"
+                        ]
+                    },
+                    {
+                        category: "Programming & Databases",
+                        icon: "code",
+                        skills: [
+                            "Python", "Java", "JavaScript", "MongoDB", "Cloud SQL" // Added Java here
+                        ]
+                    },
+                    {
+                        category: "Web Development Skills",
+                        icon: "layout-grid",
+                        skills: [
+                            "HTML", "CSS", "Responsive UI building", "Streamlit front-end for ML apps"
+                        ]
+                    },
+                    {
+                        category: "General Skills & Tools",
+                        icon: "layers",
+                        skills: [
+                            "VS Code", "Canva", "MS Word", "MS Excel", "MS PowerPoint", "Problem solving", "Quick learning", "Communication skills",
+                            "Teamwork", "Troubleshooting cloud & DevOps issues", "Cloud cost optimization", "Monitoring & performance tuning"
+                        ]
+                    }
+                ];
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    const skillsContainer = document.getElementById('skills-container');
+                    if (!skillsContainer) return;
+                    skillsContainer.innerHTML = ''; // Clear existing content
+
+                    categorizedSkills.forEach(group => {
+                        // Category Header
+                        const header = document.createElement('h3');
+                        header.className = 'flex items-center text-xl font-semibold mt-8 mb-4 text-primary-deep border-b pb-2 border-primary-lavender/50';
+                        header.innerHTML = `<i data-lucide="${group.icon}" class="w-5 h-5 mr-2 text-primary-lavender"></i> ${group.category}`;
+                        skillsContainer.appendChild(header);
+
+                        // Skills Grid for this category
+                        const grid = document.createElement('div');
+                        grid.className = 'flex flex-wrap gap-2';
+
+                        group.skills.forEach(skill => {
+                            const skillPill = document.createElement('span');
+                            // Use light lavender pill style for all skills
+                            skillPill.className = 'px-3 py-1 text-sm font-medium rounded-full bg-primary-lavender/10 text-dark-text border border-primary-lavender/50 transition hover:bg-primary-lavender/30 hover:shadow-md cursor-default';
+                            skillPill.textContent = skill;
+                            grid.appendChild(skillPill);
+                        });
+                        skillsContainer.appendChild(grid);
+                    });
+                    // Recreate Lucide icons after inserting the HTML
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                });
+            </script>
+            <div id="skills-container" class="space-y-6">
+                <!-- Categorized skills will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- 5. PROJECTS SECTION (Luxury Cards Gallery) -->
+        <section id="projects" class="luxury-card p-8 lg:p-12 rounded-3xl">
+            <h2 class="text-4xl font-bold mb-10 text-center text-primary-deep relative">
+                <span class="text-primary-lavender">Projects</span>
+                <span class="block w-20 h-1 mx-auto mt-2 bg-primary-lavender rounded-full"></span>
+            </h2>
+
+            <!-- Grid structure: 1 per row on small, 2 per row on medium/large screens -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Project Card Component -->
+                <template id="project-card-template">
+                    <div class="luxury-card project-card-item rounded-2xl overflow-hidden flex flex-col group transition-all duration-500 hover:shadow-lg">
+                        <!-- Image -->
+                        <div class="h-40 overflow-hidden relative bg-lavender-light">
+                            <img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500" />
+                            <div class="absolute top-2 left-2 px-3 py-1 bg-primary-deep text-white text-xs font-semibold rounded-full opacity-90 category-tag"></div>
+                        </div>
+                        <!-- Content -->
+                        <div class="p-5 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-3 text-primary-deep transition group-hover:text-primary-lavender"></h3>
+                            <div class="flex flex-wrap gap-2 mb-4 text-sm font-medium tech-stack-badges">
+                                <!-- Tech Stack Badges -->
+                            </div>
+                            <p class="text-dark-text/70 text-sm mb-4 flex-grow project-description"></p>
+                            <a href="#" target="_blank" class="text-center mt-auto px-4 py-2 text-sm font-semibold rounded-lg border border-primary-lavender text-primary-lavender transition duration-300 hover:bg-primary-lavender hover:text-white view-repo-link">
+                                View Repository
+                            </a>
+                        </div>
+                    </div>
+                </template>
+
+                <script>
+                    const newProjectsData = [
+                        {
+                            title: "INSIGHT-AI — Multilingual AI Health Triage Chatbot",
+                            category: "AI / NLP / Healthcare",
+                            desc: "Built a multilingual AI health triage chatbot using RAG. Embedded 40+ MB medical documents into a FAISS vector DB for contextual & safe medical answers. Designed responsive UI with voice and multilingual support.",
+                            stack: ["Python", "LangChain", "FAISS", "Streamlit", "Gemini AI", "RAG"],
+                            image: "https://placehold.co/400x200/d1c4e9/5e35b1?text=INSIGHT-AI+Chatbot",
+                            link: "https://github.com/SudheerKonduboina/INSIGHT-AI"
+                        },
+                        {
+                            title: "DevOps – CI/CD Automation Project",
+                            category: "DevOps / Cloud Automation",
+                            desc: "Developed a Python Flask web app, containerized with Docker, and automated end-to-end CI/CD using GitHub Actions for deployment on Render.",
+                            stack: ["Python", "Flask", "Docker", "GitHub Actions", "CI/CD", "Render"],
+                            image: "https://placehold.co/400x200/d1c4e9/5e35b1?text=Flask+CI/CD+Demo",
+                            link: "https://github.com/SudheerKonduboina/devops_demo"
+                        },
+                        {
+                            title: "DevOps – CI/CD + Kubernetes Project",
+                            category: "DevOps / Kubernetes",
+                            desc: "Designed and deployed a Node.js app with automated CI/CD. Wrote Dockerfile and Kubernetes manifests (YAML). Gained practical K8s + Docker integration experience.",
+                            stack: ["Node.js", "Docker", "Kubernetes", "YAML", "GitHub Actions"],
+                            image: "https://placehold.co/400x200/d1c4e9/5e35b1?text=K8s+CI/CD+Pipeline",
+                            link: "https://github.com/SudheerKonduboina/devops-demo-assignment/tree/main/.github"
+                        },
+                        {
+                            title: "Voice Sentiment Assistant — Speech Emotion Recognition",
+                            category: "AI / Speech Processing",
+                            desc: "Built an ML model that detects emotions from voice input. Extracted MFCC & Chroma features and trained a CNN + SVM hybrid model. Created an interactive dashboard for monitoring.",
+                            stack: ["Python", "TensorFlow", "Librosa", "Scikit-Learn", "SpeechRecognition"],
+                            image: "https://placehold.co/400x200/d1c4e9/5e35b1?text=Voice+Sentiment+AI",
+                            link: "https://github.com/SudheerKonduboina/ai-voice-sentimentanalysis-bot"
+                        },
+                        {
+                            title: "AI Text Generator — Transformer-Based Text Generation",
+                            category: "NLP / Deep Learning",
+                            desc: "Developed a transformer-based text generation model with sentiment control. Added chat history and downloadable responses in a Streamlit front-end.",
+                            stack: ["Python", "TensorFlow", "Hugging Face", "Streamlit", "Keras"],
+                            image: "https://placehold.co/400x200/d1c4e9/5e35b1?text=AI+Text+Generator",
+                            link: "https://github.com/SudheerKonduboina/ai-text-generator-sentiment"
+                        }
+                    ];
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const projectsContainer = document.getElementById('projects').querySelector('.grid');
+                        const template = document.getElementById('project-card-template');
+                        projectsContainer.innerHTML = ''; // Clear old projects
+
+                        newProjectsData.forEach(project => {
+                            const card = template.content.cloneNode(true).querySelector('.project-card-item');
+
+                            card.querySelector('img').src = project.image;
+                            card.querySelector('img').alt = project.title + " preview";
+                            card.querySelector('.category-tag').textContent = project.category;
+                            card.querySelector('h3').textContent = project.title;
+                            card.querySelector('.project-description').textContent = project.desc;
+                            card.querySelector('.view-repo-link').href = project.link;
+
+                            const badgesContainer = card.querySelector('.tech-stack-badges');
+                            project.stack.forEach(tech => {
+                                const badge = document.createElement('span');
+                                badge.className = 'px-3 py-0.5 rounded-full text-xs font-medium bg-primary-lavender/30 text-dark-text border border-primary-lavender/50';
+                                badge.textContent = tech;
+                                badgesContainer.appendChild(badge);
+                            });
+
+                            projectsContainer.appendChild(card);
+                        });
+                        // Recreate Lucide icons after inserting the HTML
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    });
+                </script>
+            </div>
+        </section>
+
+        <!-- 5.5. CERTIFICATIONS SECTION (NEW) -->
+        <section id="certs" class="luxury-card p-8 lg:p-12 rounded-3xl">
+            <h2 class="text-4xl font-bold mb-10 text-center text-primary-deep relative">
+                <span class="text-primary-lavender">Certifications</span>
+                <span class="block w-20 h-1 mx-auto mt-2 bg-primary-lavender rounded-full"></span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- NEW CERTIFICATION: NASSCOM Software Programmer - Java -->
+                <div class="cert-item">
+                    <i data-lucide="code" class="w-8 h-8 text-primary-deep mr-3 flex-shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm text-primary-deep">NASSCOM: Software Programmer - Java</p>
+                        <p class="text-xs text-dark-text/60">Gold Category | Oct 2024</p>
+                    </div>
+                </div>
+                
+                <!-- Certification 1: Google Cloud Fundamentals: Core Infrastructure -->
+                <div class="cert-item">
+                    <i data-lucide="award" class="w-8 h-8 text-primary-lavender mr-3 flex-shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm text-primary-deep">Google Cloud Fundamentals: Core Infrastructure</p>
+                        <p class="text-xs text-dark-text/60">Completion Badge | Sept 2025</p>
+                    </div>
+                </div>
+                
+                <!-- Certification 2: Set Up an App Dev Environment on Google Cloud -->
+                <div class="cert-item">
+                    <i data-lucide="zap" class="w-8 h-8 text-primary-deep mr-3 flex-shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm text-primary-deep">Set Up an App Dev Environment on Google Cloud</p>
+                        <p class="text-xs text-dark-text/60">Skill Badge | Sept 2025</p>
+                    </div>
+                </div>
+
+                <!-- Certification 3: Develop Your Google Cloud Network -->
+                <div class="cert-item">
+                    <i data-lucide="network" class="w-8 h-8 text-primary-lavender mr-3 flex-shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm text-primary-deep">Develop Your Google Cloud Network</p>
+                        <p class="text-xs text-dark-text/60">Skill Badge | Sept 2025</p>
+                    </div>
+                </div>
+
+                <!-- Certification 4: Build a Website on Google Cloud -->
+                <div class="cert-item">
+                    <i data-lucide="globe" class="w-8 h-8 text-primary-deep mr-3 flex-shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm text-primary-deep">Build a Website on Google Cloud</p>
+                        <p class="text-xs text-dark-text/60">Skill Badge | Sept 2025</p>
+                    </div>
+                </div>
+
+                 <!-- (Optional: Add other badges found in your resume for completeness) -->
+                <!-- Essential Google Cloud Infrastructure: Foundation -->
+                 <div class="cert-item hidden lg:flex">
+                    <i data-lucide="layers-3" class="w-8 h-8 text-primary-lavender mr-3 flex-shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm text-primary-deep">Essential Google Cloud Infrastructure: Foundation</p>
+                        <p class="text-xs text-dark-text/60">Completion Badge | Oct 2025</p>
+                    </div>
+                </div>
+                <!-- Preparing for Your Associate Cloud Engineer Journey -->
+                 <div class="cert-item hidden lg:flex">
+                    <i data-lucide="rocket" class="w-8 h-8 text-primary-deep mr-3 flex-shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm text-primary-deep">Preparing for Your Associate Cloud Engineer Journey</p>
+                        <p class="text-xs text-dark-text/60">Completion Badge | Sept 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-sm text-dark-text/70 mt-8">
+                These certifications demonstrate hands-on proficiency in Java programming fundamentals, core GCP services, networking, and application development.
+            </p>
+        </section>
+
+        <!-- 6. EXPERIENCE GRID (The main content you requested) -->
+
+        <section id="experience" class="luxury-card p-8 lg:p-12 rounded-3xl">
+
+            <h2 class="text-4xl font-bold mb-10 text-center text-primary-deep relative">
+
+                <span class="text-primary-lavender">Experience</span>
+
+                <span class="block w-20 h-1 mx-auto mt-2 bg-primary-lavender rounded-full"></span>
+
+            </h2>
+
+
+
+            <div class="max-w-6xl mx-auto">
+
+                <!-- Responsive grid layout: 1 column on mobile, 2 columns on desktop -->
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+
+
+
+                    <!-- ITEM 1: AI/ML Intern (Linkific) - Current Role -->
+
+                    <div class="luxury-card p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-primary-deep flex flex-col h-full">
+
+                        <h3 class="text-xl font-extrabold text-primary-deep mb-1">AI/ML Intern</h3>
+
+                        <p class="text-dark-text/80 font-medium">Linkific Company</p>
+
+                        <time class="text-sm text-dark-text/60 mb-3 block italic">Nov 2025 – Present</time>
+
+                        <ul class="list-disc list-inside mt-2 text-sm text-dark-text/70 space-y-1 flex-grow">
+
+                            <li>Actively contributing to the development and deployment of machine learning solutions.</li>
+
+                            <li>Gaining practical experience in AI model integration and data processing.</li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- ITEM 2: GCP Cloud & DevOps Intern (DC Infotech) - Completed Role -->
+
+                    <div class="luxury-card p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-primary-lavender flex flex-col h-full">
+
+                        <h3 class="text-xl font-extrabold text-primary-lavender mb-1">Cloud & DevOps Intern (GCP)</h3>
+
+                        <p class="text-dark-text/80 font-medium">DC Infotech</p>
+
+                        <time class="text-sm text-dark-text/60 mb-3 block italic">Sept 2025 – Dec 2025</time>
+
+                        <ul class="list-disc list-inside mt-2 text-sm text-dark-text/70 space-y-1 flex-grow">
+
+                            <li>Built/managed cloud infrastructure using Compute Engine, Cloud Storage, and VPC Networking.</li>
+
+                            <li>Deployed and scaled containerized apps using **GKE** and YAML manifests.</li>
+
+                            <li>Automated pipelines with **Cloud Build** and utilized **Terraform** for IaC.</li>
+
+                        </ul>
+
+                    </div>
+
+
+
+
+
+                    <!-- ITEM 3: AI/ML Intern (AICTE/IBM) -->
+
+                    <div class="luxury-card p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-primary-deep flex flex-col h-full">
+
+                        <h3 class="text-xl font-extrabold text-primary-deep mb-1">AI & Machine Learning Intern</h3>
+
+                        <p class="text-dark-text/80 font-medium">AICTE, Edunet Foundation & IBM</p>
+
+                        <time class="text-sm text-dark-text/60 mb-3 block italic">June 2025 – July 2025 (6 Weeks)</time>
+
+                        <ul class="list-disc list-inside mt-2 text-sm text-dark-text/70 space-y-1 flex-grow">
+
+                            <li>Gained hands-on exposure to Al & ML concepts and applied them in guided projects.</li>
+
+                            <li>Explored data-driven solutions and Cloud Computing integration.</li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    <!-- ITEM 4: Web Development Intern -->
+
+                    <div class="luxury-card p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-primary-lavender flex flex-col h-full">
+
+                        <h3 class="text-xl font-extrabold text-primary-lavender mb-1">Web Development Intern</h3>
+
+                        <p class="text-dark-text/80 font-medium">SkillCraft Technology</p>
+
+                        <time class="text-sm text-dark-text/60 mb-3 block italic">Oct 2024 – Nov 2024 (1 Month)</time>
+
+                        <ul class="list-disc list-inside mt-2 text-sm text-dark-text/70 space-y-1 flex-grow">
+
+                            <li>Completed real-time projects (Stopwatch, To-Do App).</li>
+
+                            <li>Strengthened skills in HTML, CSS, JavaScript, and responsive UI.</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 7. CONTACT FORM (Luxury Form) -->
+<section id="contact" class="luxury-card p-8 lg:p-12 rounded-3xl">
+    <h2 class="text-4xl font-bold mb-10 text-center text-primary-deep relative">
+        Get In <span class="text-primary-lavender">Touch</span>
+        <span class="block w-20 h-1 mx-auto mt-2 bg-primary-lavender rounded-full"></span>
+    </h2>
+
+    <!-- Updated: Formspree integration + new ID + POST method -->
+    <form id="contact-form" class="max-w-xl mx-auto space-y-6" action="https://formspree.io/f/mqarlapb" method="POST">
+        
+        <!-- Success/Failure Message Box -->
+        <div id="status-message" class="hidden p-4 rounded-xl text-center font-semibold text-white transition duration-300"></div>
+
+        <!-- Name Field -->
+        <div>
+            <label for="name" class="block text-sm font-medium text-dark-text mb-2">Name</label>
+            <input type="text" id="name" name="name" required class="luxury-card w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary-deep outline-none placeholder-dark-text/50 text-dark-text border border-lavender-light" placeholder="Your Name" />
+        </div>
+
+        <!-- Email Field -->
+        <div>
+            <label for="email" class="block text-sm font-medium text-dark-text mb-2">Email</label>
+            <input type="email" id="email" name="email" required class="luxury-card w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary-lavender outline-none placeholder-dark-text/50 text-dark-text border border-lavender-light" placeholder="your.email@example.com" />
+        </div>
+
+        <!-- Message Field -->
+        <div>
+            <label for="message" class="block text-sm font-medium text-dark-text mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" required class="luxury-card w-full px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary-deep outline-none placeholder-dark-text/50 text-dark-text border border-lavender-light" placeholder="Let's build something great together..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full px-8 py-3 text-lg font-semibold rounded-xl luxury-btn">
+            Send Message
+        </button>
+    </form>
+
+    <!-- Updated Script Imported from Code:2 -->
+    <script>
+        // Contact Form Submission Handler (Formspree Logic)
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const contactForm = document.getElementById('contact-form');
+            const statusMessage = document.getElementById('status-message');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+
+                // Loading state
+                statusMessage.classList.remove('hidden', 'bg-red-500', 'bg-green-600');
+                statusMessage.classList.add('bg-primary-lavender', 'text-white');
+                statusMessage.textContent = 'Sending message...';
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+
+                const formData = new FormData(contactForm);
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: contactForm.method,
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        statusMessage.classList.remove('bg-primary-lavender');
+                        statusMessage.classList.add('bg-green-600');
+                        statusMessage.textContent = '✅ Message received successfully! I will be in touch soon.';
+                        contactForm.reset();
+                    } else {
+                        let errorMessage = 'Oops! There was an issue sending your message.';
+                        try {
+                            const errorData = await response.json();
+                            errorMessage = errorData.error || errorMessage;
+                        } catch (jsonError) {
+                            console.error('Error response not readable:', jsonError);
+                        }
+
+                        statusMessage.classList.remove('bg-primary-lavender');
+                        statusMessage.classList.add('bg-red-500');
+                        statusMessage.textContent = errorMessage;
+                    }
+                } catch (error) {
+                    console.error('Network Error:', error);
+                    statusMessage.classList.remove('bg-primary-lavender');
+                    statusMessage.classList.add('bg-red-500');
+                    statusMessage.textContent = 'Network error. Please check your connection and try again.';
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+
+                    setTimeout(() => {
+                        statusMessage.classList.add('hidden');
+                    }, 7000);
+                }
+            });
+        });
+    </script>
+
+</section>
+</main>
+
+<!-- 8. FOOTER (Light Grey Strip) -->
+<footer class="bg-[#eee] p-6 mt-16 rounded-t-3xl border-t border-lavender-light">
+    <div class="max-w-7xl mx-auto text-center">
+        <p class="text-sm text-dark-text/70">
+            &copy; 2025 Sudheer Konduboina — Built with <span class="text-primary-deep">Cloud</span>, 
+            <span class="text-primary-lavender">Code</span> & <span class="text-primary-deep">Elegance</span>.
+        </p>
+        <div class="flex justify-center space-x-4 mt-3">
+            <a href="mailto:konduboinasudheer@gmail.com" class="text-dark-text/80 hover:text-primary-deep transition"><i data-lucide="mail" class="w-5 h-5"></i></a>
+            <a href="https://www.linkedin.com/in/sudheerkonduboina/" class="text-dark-text/80 hover:text-primary-lavender transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="https://github.com/SudheerKonduboina" class="text-dark-text/80 hover:text-primary-deep transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Initialize Lucide Icons and Mobile Menu Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+
+                if (window.innerWidth < 640) {
+                    const menu = document.getElementById('mobile-menu');
+                    const button = document.getElementById('mobile-menu-button');
+                    const menuIcon = button.querySelector('[data-lucide="menu"]');
+                    const closeIcon = button.querySelector('[data-lucide="x"]');
+
+                    menu.style.display = 'none';
+                    button.setAttribute('aria-expanded', 'false');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = button.querySelector('[data-lucide="menu"]');
+        const closeIcon = button.querySelector('[data-lucide="x"]');
+
+        if (closeIcon) closeIcon.classList.add('hidden');
+
+        button.addEventListener('click', () => {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                menu.style.display = 'none';
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+    });
+</script>
+</body>
+</html>
