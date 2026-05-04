@@ -292,8 +292,8 @@
                         category: "DevOps Tools & Technologies",
                         icon: "wrench",
                         skills: [
-                            "Git", "GitHub", "GitHub Actions", "Jenkins", "Docker", "Kubernetes (GKE)", "Dockerfile", "YAML",
-                            "CI/CD Pipelines", "Terraform", "Render (Deployment)", "gcloud CLI", "Infrastructure as Code (IaC)"
+                            "Git", "GitHub", "GitHub Actions (CI/CD)", "Jenkins", "Docker", "Kubernetes (GKE)", "Dockerfile", "YAML",
+                            "CI/CD Pipelines", "Terraform", "Render (Deployment)", "gcloud CLI", "Infrastructure as Code (IaC)", "Linux"
                         ]
                     },
                     {
@@ -301,22 +301,23 @@
                         icon: "brain",
                         skills: [
                             "TensorFlow", "Keras", "Scikit-learn", "Hugging Face Transformers", "LangChain", "FAISS",
-                            "NLP (Natural Language Processing)", "Sentiment Analysis", "Speech Emotion Recognition",
-                            "Feature Engineering", "Model Training & Evaluation", "Deep Learning", "Streamlit (AI web apps)"
+                            "NLP (Natural Language Processing)", "Computer Vision", "Sentiment Analysis", "Speech Emotion Recognition",
+                            "Feature Engineering", "Model Training & Evaluation", "Deep Learning", "Streamlit (AI web apps)",
+                            "Vector Databases (FAISS, ChromaDB, Pinecone)"
                         ]
                     },
                     {
                         category: "Programming & Databases",
                         icon: "code",
                         skills: [
-                            "Python", "Java", "JavaScript", "MongoDB", "Cloud SQL" // Added Java here
+                            "Python", "Java", "JavaScript", "MongoDB", "Cloud SQL", "PostgreSQL", "SQLAlchemy", "REST API Design", "OAuth2", "FastAPI"
                         ]
                     },
                     {
                         category: "Web Development Skills",
                         icon: "layout-grid",
                         skills: [
-                            "HTML", "CSS", "Responsive UI building", "Streamlit front-end for ML apps"
+                            "HTML", "CSS", "Next.js", "TailwindCSS", "Responsive UI building", "Streamlit front-end for ML apps"
                         ]
                     },
                     {
@@ -325,6 +326,21 @@
                         skills: [
                             "VS Code", "Canva", "MS Word", "MS Excel", "MS PowerPoint", "Problem solving", "Quick learning", "Communication skills",
                             "Teamwork", "Troubleshooting cloud & DevOps issues", "Cloud cost optimization", "Monitoring & performance tuning"
+                        ]
+                    },
+                    {
+                        category: "Data Structures & Algorithms",
+                        icon: "binary",
+                        skills: [
+                            "Data Structures & Algorithms", "BFS / DFS", "Dynamic Programming", "Binary Search",
+                            "Hash Maps", "Trees & Graphs"
+                        ]
+                    },
+                    {
+                        category: "Testing & Architecture",
+                        icon: "shield-check",
+                        skills: [
+                            "PyTest", "Test Driven Development", "System Design", "Distributed Systems"
                         ]
                     }
                 ];
@@ -398,6 +414,22 @@
 
                 <script>
                     const newProjectsData = [
+                        {
+                            title: "AI Assistant",
+                            category: "AI Systems / Backend Engineering",
+                            desc: "Enterprise-grade AI Governance Assistant built using FastAPI with modular clean architecture. Implements role-based governance workflows, RAG-based intent recognition, background task orchestration using Celery & Redis, structured observability, security hardening, and production-ready reliability patterns.",
+                            stack: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy Async", "JWT Authentication", "Llama 3.1 (Groq)", "Celery", "Redis", "Docker", "Docker Compose", "Structured Logging", "Rate Limiting", "Circuit Breaker Pattern"],
+                            image: "ai_assistant_card.png",
+                            link: "https://github.com/SudheerKonduboina/Assistant-AI"
+                        },
+                        {
+                            title: "Slooze Enterprise Food Ordering Platform",
+                            category: "Full Stack / Enterprise Backend",
+                            desc: "Production-grade enterprise food ordering system featuring RBAC authorization, country-based access control, distributed architecture, Next.js frontend, FastAPI backend, Redis caching, and Dockerized microservice deployment behind NGINX reverse proxy.",
+                            stack: ["FastAPI", "Next.js", "PostgreSQL", "Redis", "JWT", "RBAC", "Docker", "Docker Compose", "Nginx", "TailwindCSS", "Framer Motion"],
+                            image: "slooze_platform_card.png",
+                            link: "https://github.com/SudheerKonduboina/slooze-enterprise-food-ordering"
+                        },
                         {
                             title: "INSIGHT-AI — Multilingual AI Health Triage Chatbot",
                             category: "AI / NLP / Healthcare",
@@ -585,9 +617,15 @@
 
                         <ul class="list-disc list-inside mt-2 text-sm text-dark-text/70 space-y-1 flex-grow">
 
-                            <li>Actively contributing to the development and deployment of machine learning solutions.</li>
+                            <li>Designed and built scalable REST APIs (CRUD) using FastAPI + SQLAlchemy; applied object-oriented design principles with clean router → service → repository architecture, achieving 85%+ test coverage via PyTest.</li>
 
-                            <li>Gaining practical experience in AI model integration and data processing.</li>
+                            <li>Optimised PostgreSQL schemas with advanced indexing strategies, reducing data retrieval latency by ~30%.</li>
+
+                            <li>Implemented JWT authentication, RBAC, Pydantic validation, and rate-limiting middleware securing production endpoints.</li>
+
+                            <li>Integrated Redis caching and Celery async task queues for high-throughput pipelines and containerised services using Docker &amp; Docker Compose.</li>
+
+                            <li>Collaborated with cross-functional teams delivering reliable observable backend systems.</li>
 
                         </ul>
 
