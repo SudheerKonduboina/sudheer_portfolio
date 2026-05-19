@@ -553,18 +553,70 @@ body {
 /* ── FOOTER ── */
 .site-footer {
   background: var(--bg-secondary);
-  padding: 2.5rem 1.5rem;
+  padding: 2rem 2rem;
   margin-top: 4rem;
   border-top: 1px solid rgba(91, 127, 103, 0.1);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+.footer-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+.footer-text .accent-text {
+  color: var(--accent);
+  font-weight: 600;
+}
+.footer-text .accent-light-text {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 .footer-link {
   color: var(--text-secondary);
-  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
 }
 .footer-link:hover {
-  color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+}
+.footer-link[aria-label="Email"]:hover {
+  color: #ea4335;
+}
+.footer-link[aria-label="LinkedIn"]:hover {
+  color: #0077b5;
+}
+.footer-link[aria-label="GitHub"]:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer-text {
+    text-align: center;
+  }
 }
 
 /* ── ABOUT SECTION ICON ── */
